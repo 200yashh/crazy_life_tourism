@@ -125,7 +125,7 @@
     </section>
     <!--//grids-->
     <!-- stats -->
-    <section class="w3l-stats py-5" id="stats">
+    {{-- <section class="w3l-stats py-5" id="stats">
         <div class="gallery-inner container py-lg-0 py-3">
             <div class="row stats-con pb-lg-3">
                 <div class="col-lg-3 col-6 stats_info counter_grid">
@@ -146,7 +146,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> --}}
     <!-- //stats -->
     <!--/-->
     <div class="best-rooms py-5">

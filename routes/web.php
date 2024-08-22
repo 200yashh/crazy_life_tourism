@@ -113,9 +113,9 @@ Route::group(['middleware' => ['web', 'auth', 'roleAuth']], function () use ($co
         Route::get('/auth/forgot-password-basic', $controller_path . '\authentications\ForgotPasswordBasic@index')->name('auth-reset-password-basic');
 
         // Users
-        // Route::resource('users', $controller_path . '\Backend\UsersController');
-        // Route::get('users_action/{id}', $controller_path . '\Backend\UsersController@userAction')->name('users.action');
-        // Route::get('users_deleted', $controller_path . '\Backend\UsersController@deletedUsers')->name('users.deleted')->middleware("checkRole:1");
+        Route::resource('users', $controller_path . '\Backend\UsersController');
+        Route::get('users_action/{id}', $controller_path . '\Backend\UsersController@userAction')->name('users.action');
+        Route::get('users_deleted', $controller_path . '\Backend\UsersController@deletedUsers')->name('users.deleted')->middleware("checkRole:1");
 
         Route::resource('user-groups', $controller_path . '\Backend\Hr\UserGroupsController');
 
