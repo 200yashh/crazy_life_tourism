@@ -102,7 +102,7 @@ class AgentsPackagesController extends Controller
             ['data' => 'start_date', 'searchable' => true, 'name' => 'start_date', 'title' => 'Start Date', 'width' => '15%'],
             ['data' => 'end_date', 'searchable' => true, 'name' => 'end_date', 'title' => 'End Date', 'width' => '15%'],
             ['data' => 'days', 'searchable' => true, 'name' => 'days', 'title' => 'Days', 'width' => '15%'],
-            ['data' => 'category', 'searchable' => true, 'name' => 'agent_packages.master_package_id', 'title' => 'Category', 'width' => '15%'],
+            ['data' => 'category', 'searchable' => true, 'name' => 'agent_packages.master_package_id', 'title' => 'City', 'width' => '15%'],
             ['data' => 'status', 'name' => 'status', 'title' => 'Status', 'width' => '15%', 'class' => 'text-center'],
             [
                 'defaultContent' => '',
@@ -180,9 +180,8 @@ class AgentsPackagesController extends Controller
         $validator = validator($request->all(), [
             'start_date' => 'required|date',
             'end_date' => 'required|date',
-            'end_date' => 'required',
             'availability' => 'required',
-            'flight' => 'required',
+            'name' => 'required',
             'rate' => 'required',
             'status' => 'required',
         ]);
@@ -219,6 +218,9 @@ class AgentsPackagesController extends Controller
         foreach ($values as $name => $value) {
             if ($name == 'start_date' || $name == 'end_date') {
                 $value = Carbon::parse($value)->tz(config('app.timezone'))->format('Y-m-d');
+            }
+            if ($name == 'include') {
+                $value = implode(';',$value);
             }
 
             $data->{$name} = $value;

@@ -1,1076 +1,369 @@
-<!doctype html>
-<html lang="zxx">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <!-- Required meta tags -->
+    <title>{{env('APP_NAME')}}</title>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Crazy Life Tourism</title>
-    <!-- google fonts -->
-    <link href="//fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link href="//fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;0,700;1,400&display=swap" rel="stylesheet">
-    <!-- google fonts -->
-    <!-- Template CSS -->
-    <link rel="stylesheet" href="{{ asset('frontend/assets/css/style-starter.css') }}">
-    <!-- Template CSS -->
-    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="apple-touch-icon" href="frontend/assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="frontend/assets/img/favicon.png">
+
+    <link rel="stylesheet" href="frontend/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="frontend/assets/css/templatemo.css">
+    <link rel="stylesheet" href="frontend/assets/css/custom.css">
+
+    <!-- Load fonts style after rendering the layout styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
+    <link rel="stylesheet" href="frontend/assets/css/fontawesome.min.css">
 </head>
 
 <body>
-    <!--header-->
-    <header id="site-header" class="fixed-top">
-        <div class="container">
-            <nav class="navbar navbar-expand-lg stroke">
-                <h1><a class="navbar-brand mr-lg-5" href="index.html">
-                    Crazy Life Tourism
-                    </a></h1>
-                <!-- if logo is image enable this
-      <a class="navbar-brand" href="#index.html">
-          <img src="image-path" alt="Your logo" title="Your logo" style="height:35px;" />
-      </a> -->
-                <button class="navbar-toggler  collapsed bg-gradient" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon fa icon-expand fa-bars"></span>
-                    <span class="navbar-toggler-icon fa icon-close fa-times"></span>
-                    </span>
-                </button>
+    <!-- Start Top Nav -->
+    <nav class="navbar navbar-expand-lg bg-dark navbar-light d-none d-lg-block" id="templatemo_nav_top">
+        <div class="container text-light">
+            <div class="w-100 d-flex justify-content-between">
+                <div>
+                    <i class="fa fa-envelope mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                    <i class="fa fa-phone mx-2"></i>
+                    <a class="navbar-sm-brand text-light text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                </div>
+                <div>
+                    <a class="" href="https://fb.com/templatemo" target="_blank" rel="sponsored"><i class="fab fa-facebook-f fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://twitter.com/" target="_blank"><i class="fab fa-twitter fa-sm fa-fw me-2"></i></a>
+                    <a class="text-light" href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin fa-sm fa-fw"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Close Top Nav -->
 
-                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="{{ url('/') }}">Home <span class="sr-only">(current)</span></a>
+
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-light shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+
+            <a class="navbar-brand text-success logo h2 align-self-center" href="index">
+                {{env('APP_NAME')}}
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#templatemo_main_nav" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="templatemo_main_nav">
+                <div class="flex-fill">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-lg-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#about-us">About</a>
+                            <a class="nav-link" href="about">About</a>
                         </li>
                         <li class="nav-item">
-                            <!-- <a class="nav-link" href="#destinations">Destinations</a> -->
-                            <a class="nav-link" href="#destinations">Destinations</a>
+                            <a class="nav-link" href="packages">Packages</a>
                         </li>
-
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contact</a>
+                            <a class="nav-link" href="contact">Contact</a>
                         </li>
-
                     </ul>
                 </div>
-                <!-- <div class="d-lg-block dne">
-                    <a href="#contact" class="btn btn-style btn-secondary">Get In Touch</a>
-                </div> -->
-                <!-- toggle switch for light and dark theme -->
-                <div class="mobile-position">
-                    <nav class="navigation">
-                        <div class="theme-switch-wrapper">
-                            <label class="theme-switch" for="checkbox">
-                                <input type="checkbox" id="checkbox">
-                                <div class="mode-container">
-                                    <i class="gg-sun"></i>
-                                    <i class="gg-moon"></i>
-                                </div>
-                            </label>
-                        </div>
-                    </nav>
-                </div>
-                <!-- //toggle switch for light and dark theme -->
-            </nav>
+            </div>
+
         </div>
-    </header>
-    <!-- //header -->
-    <!--banner-slider-->
-    <!-- main-slider -->
-    <section class="w3l-main-slider" id="home">
-        <div class="banner-content">
-            <div id="demo-1" data-zs-src='["{{ asset('frontend/assets/images/banner1.jpg') }}", "{{ asset('frontend/assets/images/banner2.jpg') }}","{{ asset('frontend/assets/images/banner3.jpg') }}", "{{ asset('frontend/assets/images/banner4.jpg') }}"]' data-zs-overlay="dots">
-                <div class="demo-inner-content">
-                    <div class="container">
-                        <div class="banner-infhny">
-                            <h3>You don't need to go far to find what matters.</h3>
-                            <h6 class="mb-3">Discover your next adventure</h6>
-                            <div class="flex-wrap search-wthree-field mt-md-5 mt-4">
-                                <form action="#" method="post" class="booking-form">
-                                    <div class="row book-form">
-                                        <div class="form-input col-md-4 mt-md-0 mt-3">
-
-                                            <select name="city" class="selectpicker city" id="city">
-                                                <option value="">Destination</option>
-                                            </select>
-                                        </div>
-                                        <!-- <div class="form-input col-md-4 mt-md-0 mt-3">
-                                            <input type="date" name="" placeholder="Date" required="">
-                                        </div> -->
-                                        <!-- <div class="bottom-btn col-md-4 mt-md-0 mt-3">
-                                            <button class="btn btn-style btn-secondary"><span class="fa fa-search mr-3" aria-hidden="true"></span> Search</button>
-                                        </div> -->
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- /main-slider -->
-    <!-- //banner-slider-->
-
-    <!--/grids-->
-    <section class="w3l-grids-3 py-5 destinations" id="destinations">
-        <div class="container py-md-5">
-            <div class=" title-content text-left mb-lg-5 mb-4">
-                <h6 class="sub-title">View</h6>
-                <h3 class="hny-title package-heading" id="package-heading">Popular Packages</h3>
-            </div>
-            <div class="row bottom-ab-grids" id="package-container">
-            </div>
-        </div>
-    </section>
-    <!--//grids-->
-    <!-- stats -->
-    {{-- <section class="w3l-stats py-5" id="stats">
-        <div class="gallery-inner container py-lg-0 py-3">
-            <div class="row stats-con pb-lg-3">
-                <div class="col-lg-3 col-6 stats_info counter_grid">
-                    <p class="counter">730</p>
-                    <h4>Branches</h4>
-                </div>
-                <div class="col-lg-3 col-6 stats_info counter_grid1">
-                    <p class="counter">1680</p>
-                    <h4>Travel Guides</h4>
-                </div>
-                <div class="col-lg-3 col-6 stats_info counter_grid mt-lg-0 mt-5">
-                    <p class="counter">812</p>
-                    <h4>Happy Customers</h4>
-                </div>
-                <div class="col-lg-3 col-6 stats_info counter_grid2 mt-lg-0 mt-5">
-                    <p class="counter">990</p>
-                    <h4>Awards</h4>
-                </div>
-            </div>
-        </div>
-    </section> --}}
-    <!-- //stats -->
-    <!--/-->
-    <div class="best-rooms py-5">
-        <div class="container py-md-5">
-            <div class="ban-content-inf row">
-                <div class="maghny-gd-1 col-lg-6">
-                    <div class="maghny-grid">
-                        <figure class="effect-lily border-radius  m-0">
-                            <img class="img-fluid" src="{{ asset('frontend/assets/images/g10.jpg') }}" alt="" />
-                            <figcaption>
-                                <div>
-                                    <h4>3Days, 4 Nights</h4>
-                                    <p>From 1720$ </p>
-                                </div>
-
-                            </figcaption>
-                        </figure>
-                    </div>
-                </div>
-                <div class="maghny-gd-1 col-lg-6 mt-lg-0 mt-4">
-                    <div class="row">
-                        <div class="maghny-gd-1 col-6">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{ asset('frontend/assets/images/g9.jpg') }}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>3Days, 4 Nights</h4>
-                                            <p>From 1220$ </p>
-                                        </div>
-
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-6">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{ asset('frontend/assets/images/g8.jpg') }}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>3Days, 4 Nights</h4>
-                                            <p>From 1620$ </p>
-                                        </div>
-
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-6 mt-4">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{ asset('frontend/assets/images/g7.jpg') }}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>3Days, 4 Nights</h4>
-                                            <p>From 1820$ </p>
-                                        </div>
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                        <div class="maghny-gd-1 col-6 mt-4">
-                            <div class="maghny-grid">
-                                <figure class="effect-lily border-radius">
-                                    <img class="img-fluid" src="{{ asset('frontend/assets/images/g6.jpg') }}" alt="" />
-                                    <figcaption>
-                                        <div>
-                                            <h4>3Days, 4 Nights</h4>
-                                            <p>From 1520$ </p>
-                                        </div>
-
-                                    </figcaption>
-                                </figure>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- //stats -->
-    <!--/w3l-bottom-->
-    <section class="w3l-bottom py-5">
-        <div class="container py-md-4 py-3 text-center">
-            <div class="row my-lg-4 mt-4">
-                <div class="col-lg-9 col-md-10 ml-auto">
-                    <div class="bottom-info ml-auto">
-                        <div class="header-section text-left">
-                            <h3 class="hny-title two">Traveling makes a man wiser, but less happy.</h3>
-                            <p class="mt-3 pr-lg-5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit
-                                beatae laudantium
-                                voluptate rem ullam dolore nisi voluptatibus esse quasi. Integer sit amet .Lorem ipsum
-                                dolor sit
-                                amet adipisicing elit.</p>
-                            <a href="#about-us" class="btn btn-style btn-secondary mt-5">Read More</a>
-                        </div>
+    </nav>
+    <!-- Close Header -->
 
 
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!--//w3l-bottom-->
-
-    <section class="w3l-grids-3 w3l-cta4 py-5" id="about-us">
-        <div class="container py-lg-5">
-            <div class="ab-section text-center">
-                <h6 class="sub-title">About Us</h6>
-                <h3 class="hny-title">Travel to make memories all around the world.</h3>
-                <p class="py-3 mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Harum labore sed, veniam
-                    nisi
-                    sunt
-                    laboriosam ducimus, odio
-                    aspernatur fugiat minima blanditiis dignissimos.</p>
-                <a href="#destinations" class="btn btn-style btn-primary">Read More</a>
-            </div>
-            <div class="row mt-5">
-                <div class="col-md-9 mx-auto">
-                    <img src="{{ asset('frontend/assets/images/banner3.jpg') }}" class="img-fluid" alt="">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- testimonials -->
-    <section class="w3l-clients" id="clients">
-        <!-- /grids -->
-        <div class="cusrtomer-layout pt-5">
-            <div class="container py-md-3 pb-lg-0">
-                <div class="heading text-center mx-auto">
-                    <h6 class="sub-title text-center">Here’s what they have to say</h6>
-                    <h3 class="hny-title mb-md-5 mb-4">our clients do the talking</h3>
-                </div>
-                <!-- /grids -->
-                <div class="testimonial-width">
-                    <div id="owl-demo1" class="owl-two owl-carousel owl-theme testimonial-container">
-                        <!-- Dynamic content here -->
-                    </div>
-                </div>
-            </div>
-            <!-- /grids -->
-        </div>
-        <!-- //grids -->
-    </section>
-    <!-- //testimonials -->
-
-    <!-- contact-form -->
-    <section class="w3l-grids-3 w3l-contact pt-3" id="contact">
-        <div class="contact-infubd py-5">
-            <div class="container py-lg-3">
-                <div class="contact-grids row">
-                    <div class="col-lg-6 contact-left">
-                        <div class="partners">
-                            <div class="cont-details">
-                                <h5>Get in touch</h5>
-                                <p class="mt-3 mb-4">Hi there, We are available 24/7 by fax, e-mail or by phone. Drop
-                                    us line so we can
-                                    talk
-                                    futher about that.</p>
-                            </div>
-                            <div class="hours">
-                                <h6 class="mt-4">Email:</h6>
-                                <p> <a href="mailto:coder.nilesh0611@gmail.com">
-                                    coder.nilesh0611@gmail.com</a></p>
-                                <h6 class="mt-4">Visit Us:</h6>
-                                <p> 78-80 Upper St Giles St. Norwich NR2 1LT United Kingdom.</p>
-                                <h6 class="mt-4">Contact:</h6>
-                                <p class="margin-top"><a href="tel:+44-255-366-88">+44-255-366-88</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 mt-lg-0 mt-5 contact-right">
-                        <form action="" method="post" class="signin-form contact-us-form">
-                            <div class="input-grids">
-                                <!-- <div class="form-group">
-                                    <select name="b_city" id="b_city" class="contact-input">
-                                        <option value="">Select City</option>
-                                        @foreach ($cityData as $k => $v)
-                                        <option value="{{ $k }}">{{ $v }}</option>
-                                        @endforeach
-                                    </select>
-                                </div> -->
-                                <div class="form-group">
-                                    <input type="text" name="name" id="w3lName" placeholder="Your Name*" class="contact-input contact-name" required />
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" name="email" id="w3lSender" placeholder="Your Email*" class="contact-input contact-email" required="" />
-                                </div>
-                                <div class="form-group">
-                                    <input type="text" name="phone" id="w3lSubect" placeholder="Phone*" class="contact-input contact-phone" required />
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <textarea name="message" id="w3lMessage" placeholder="Type your message here*" class="contact-message" required=""></textarea>
-                            </div>
-                            <div class="text-right">
-                                <button id="send_message_btn" class="btn btn-style btn-primary">Send Message</button>
-                            </div>
-                        </form>
-                    </div>
-
-                </div>
-                <div class="map">
-                    <h5>Map</h5>
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d387145.86654334463!2d-74.25818682528057!3d40.70531100753592!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew+York%2C+NY%2C+USA!5e0!3m2!1sen!2sin!4v1493028309728" style="border:0" allowfullscreen=""></iframe>
-                </div>
-            </div>
-    </section>
-    <!-- /contact-form -->
-
-    <!--/w3l-footer-29-main-->
-    <footer>
-        <!-- footer -->
-        <section class="w3l-footer">
-            <div class="w3l-footer-16-main py-5">
+    <!-- Start Banner Hero -->
+    <div id="template-mo-zay-hero-carousel" class="carousel slide" data-bs-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="0" class="active"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="1"></li>
+            <li data-bs-target="#template-mo-zay-hero-carousel" data-bs-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
                 <div class="container">
-                    <div class="row">
-                        <div class="col-lg-6 column">
-                            <div class="row">
-                                <div class="col-md-4 column">
-                                    <h3>Company</h3>
-                                    <ul class="footer-gd-16">
-                                        <li><a href="{{ url('/') }}">Home</a></li>
-                                        <li><a href="#about-us">About Us</a></li>
-                                        <li><a href="#destinations">Services</a></li>
-                                        <li><a href="blog.html">Blog</a></li>
-                                        <li><a href="#contact">Contact Us</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 column mt-md-0 mt-4">
-                                    <h3>Useful Links</h3>
-                                    <ul class="footer-gd-16">
-                                        <li><a href="#url">Destinations</a></li>
-                                        <li><a href="#url">Our Branches</a></li>
-                                        <li><a href="#url">Latest Media</a></li>
-                                        <li><a href="#about-us">About Company</a></li>
-                                        <li><a href="#url">Our Packages</a></li>
-                                    </ul>
-                                </div>
-                                <div class="col-md-4 column mt-md-0 mt-4">
-                                    <h3>Our Services</h3>
-                                    <ul class="footer-gd-16">
-                                        <li><a href="#url">Privacy Policy</a></li>
-                                        <li><a href="#url">Our Terms</a></li>
-                                        <li><a href="#destinations">Services</a></li>
-                                        <li><a href="landing-single.html">Landing Page</a></li>
-                                        <li><a href="#url">Our Guides</a></li>
-                                    </ul>
-                                </div>
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="frontend/assets/img/g1.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left align-self-center">
+                                <h1 class="h1 text-success"><b>Crazy </b> Life Tourism</h1>
+                                <h3 class="h2">Best tour </h3>
+                                <p>
+                                    crazy life tourism.
+                                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                </p>
                             </div>
-                        </div>
-                        <div class="col-lg-6 col-md-12 column pl-lg-5 column4 mt-lg-0 mt-5">
-                            <h3>Newsletter </h3>
-                            <div class="end-column">
-                                <h4>Get latest updates and offers.</h4>
-                                <form action="#" class="subscribe" method="post">
-                                    <input type="email" name="email" placeholder="Email Address" required="">
-                                    <button type="submit">Go</button>
-                                </form>
-                                <p>Sign up for our latest news & articles. We won’t give you spam mails.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="d-flex below-section justify-content-between align-items-center pt-4 mt-5">
-                        <div class="columns text-lg-left text-center">
-                            <p>&copy; {{date("Y")}} {{env('APP_NAME')}}. All rights reserved.Design by <a href="https://w3layouts.com/" target="_blank">
-                                    W3Layouts</a>
-                            </p>
-                        </div>
-                        <div class="columns-2 mt-lg-0 mt-3">
-                            <ul class="social">
-                                <li><a href="#facebook"><span class="fa fa-facebook" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a href="#linkedin"><span class="fa fa-linkedin" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a href="#twitter"><span class="fa fa-twitter" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a href="#google"><span class="fa fa-google-plus" aria-hidden="true"></span></a>
-                                </li>
-                                <li><a href="#github"><span class="fa fa-github" aria-hidden="true"></span></a>
-                                </li>
-                            </ul>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <!-- move top -->
-            <button onclick="topFunction()" id="movetop" title="Go to top">
-                <span class="fa fa-angle-up"></span>
-            </button>
-            <script>
-                // When the user scrolls down 20px from the top of the document, show the button
-                window.onscroll = function() {
-                    scrollFunction()
-                };
-
-                function scrollFunction() {
-                    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                        document.getElementById("movetop").style.display = "block";
-                    } else {
-                        document.getElementById("movetop").style.display = "none";
-                    }
-                }
-
-                // When the user clicks on the button, scroll to the top of the document
-                function topFunction() {
-                    document.body.scrollTop = 0;
-                    document.documentElement.scrollTop = 0;
-                }
-            </script>
-            <!-- //move top -->
-            <script>
-                $(function() {
-                    $('.navbar-toggler').click(function() {
-                        $('body').toggleClass('noscroll');
-                    })
-                });
-            </script>
-        </section>
-        <!-- //footer -->
-    </footer>
-    <!-- Template JavaScript -->
-    <script src="{{ asset('frontend/assets/js/jquery-3.3.1.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/theme-change.js') }}"></script>
-    <!--/slider-js-->
-    <script src="{{ asset('frontend/assets/js/jquery.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/modernizr-2.6.2.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/jquery.zoomslider.min.js') }}"></script>
-    <!--//slider-js-->
-    <script src="{{ asset('frontend/assets/js/owl.carousel.js') }}"></script>
-    <!-- script for tesimonials carousel slider -->
-    <script>
-        // $(document).ready(function() {
-        //     $("#owl-demo1").owlCarousel({
-        //         loop: true,
-        //         margin: 20,
-        //         nav: false,
-        //         responsiveClass: true,
-        //         responsive: {
-        //             0: {
-        //                 items: 1,
-        //                 nav: false
-        //             },
-        //             736: {
-        //                 items: 1,
-        //                 nav: false
-        //             },
-        //             1: {
-        //                 items: 1,
-        //                 nav: false,
-        //                 loop: true
-        //             }
-        //         }
-        //     })
-        // })
-    </script>
-    <!-- //script for tesimonials carousel slider -->
-    <!-- stats number counter-->
-    <script src="{{ asset('frontend/assets/js/jquery.waypoints.min.js') }}"></script>
-    <script src="{{ asset('frontend/assets/js/jquery.countup.js') }}"></script>
-    <script>
-        $('.counter').countUp();
-    </script>
-    <!-- //stats number counter -->
-
-    <!--/MENU-JS-->
-    <script>
-        $(window).on("scroll", function() {
-            var scroll = $(window).scrollTop();
-
-            if (scroll >= 80) {
-                $("#site-header").addClass("nav-fixed");
-            } else {
-                $("#site-header").removeClass("nav-fixed");
-            }
-        });
-
-        //Main navigation Active Class Add Remove
-        $(".navbar-toggler").on("click", function() {
-            $("header").toggleClass("active");
-        });
-        $(document).on("ready", function() {
-            if ($(window).width() > 991) {
-                $("header").removeClass("active");
-            }
-            $(window).on("resize", function() {
-                if ($(window).width() > 991) {
-                    $("header").removeClass("active");
-                }
-            });
-        });
-    </script>
-    <!--//MENU-JS-->
-
-    <script src="{{ asset('frontend/assets/js/bootstrap.min.js') }}"></script>
-
-
-    <!-- Modal -->
-    <div class="modal fade bd-example-modal-lg" id="packageModal" tabindex="-1" role="dialog" aria-labelledby="packageModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <!-- <div class="modal fade" id="packageModal" tabindex="-1" role="dialog" aria-labelledby="packageModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document"> -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="packageModalLabel">Add Passenger Details: </h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <form class="query-form" method="post" action="">
-                    <div class="modal-body">
-                        <div class="main-form-container">
-                            <div class="row form-container form-1" data-count="0">
-                                <div class="col-md-11">
-                                    <div class="modal-form border-modal mt-3">
-                                        <div class="border-modal passport-details" id="passport-details">
-                                            <h5 class="passport-heading" id="packageModalLabel">Passport Details</h5>
-                                            <input type="hidden" name="agent_id" id="agent_id" value="">
-                                            <input type="hidden" name="agent_package_id" id="agent_package_id" value="">
-                                            <input type="hidden" name="master_package_id" id="master_package_id" value="">
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="name" class="col-form-label">Name:</label>
-                                                    <input type="text" class="form-control" id="name" name="enquiry[0][name_as_per_passport]">
-                                                </div>
-                                                <div class="form-group  col-md-6">
-                                                    <label for="passport" class="col-form-label">Passport No:</label>
-                                                    <input type="text" class="form-control" id="passport" name="enquiry[0][passport_number]">
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="nationality" class="col-form-label">Nationality:</label>
-                                                    <input type="text" class="form-control" id="nationality" name="enquiry[0][nationality]">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="dob" class="col-form-label">Dob:</label>
-                                                    <input type="date" class="form-control" id="dob" name="enquiry[0][dob]">
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="place-of-birth" class="col-form-label">Place Of Birth:</label>
-                                                    <input type="text" class="form-control" id="place-of-birth" name="enquiry[0][place_of_birth]">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="gender" class="col-form-label">Gender:</label>
-                                                    <select name="enquiry[0][gender]" id="gender" class="form-control">
-                                                        <option value="">Select Gender</option>
-                                                        <option value="male">Male</option>
-                                                        <option value="female">Female</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-
-                                            <div class="row">
-                                                <div class="form-group col-md-6">
-                                                    <label for="date-of-issue" class="col-form-label">Date Of Issue:</label>
-                                                    <input type="date" class="form-control" id="date-of-issue" name="enquiry[0][passport_date_of_issue]">
-                                                </div>
-                                                <div class="form-group col-md-6">
-                                                    <label for="date-of-expiry" class="col-form-label">Date Of Expiry:</label>
-                                                    <input type="date" class="form-control" id="date-of-expiry" name="enquiry[0][passport_date_of_expiry]">
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <div class="row">
-                                            <div class="form-group col-md-6">
-                                                <label for="contact" class="col-form-label">Contact No.:</label>
-                                                <input type="text" class="form-control" id="contact" name="enquiry[0][contact]">
-                                            </div>
-                                            <div class="form-group col-md-6">
-                                                <label for="email" class="col-form-label">Email:</label>
-                                                <input type="email" class="form-control" id="email" name="enquiry[0][email]">
-                                            </div>
-                                            <div class="form-group col-md-12">
-                                                <label for="address" class="col-form-label">Address:</label>
-                                                <textarea class="form-control" id="address" name="enquiry[0][address]"></textarea>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class=" col-md-1 minus-icon-div">
-                                    <a href="javascript:;" class="btn btn-sm btn-danger remove-row mt-2"><i class="fa fa-times"></i></a>
-                                </div>
-
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="frontend/assets/img/g2.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Proident occaecat</h1>
+                                <h3 class="h2">Aliquip ex ea commodo consequat</h3>
+                                <p>
+                                    You are permitted to use this Zay CSS template for your commercial websites. 
+                                    You are <strong>not permitted</strong> to re-distribute the template ZIP file in any kind of template collection websites.
+                                </p>
                             </div>
                         </div>
-
-                        <div class="col-md-2 add-icon-div text-center mt-3">
-                            <a href="javascript:;" class="btn btn-sm btn-dark"><i class="fa fa-plus"> Add More</i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <div class="row p-5">
+                        <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
+                            <img class="img-fluid" src="frontend/assets/img/g3.jpg" alt="">
+                        </div>
+                        <div class="col-lg-6 mb-0 d-flex align-items-center">
+                            <div class="text-align-left">
+                                <h1 class="h1">Repr in voluptate</h1>
+                                <h3 class="h2">Ullamco laboris nisi ut </h3>
+                                <p>
+                                    We bring you 100% free CSS templates for your websites. 
+                                    If you wish to support TemplateMo, please make a small contribution via PayPal or tell your friends about our website. Thank you.
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary save-query-form">Submit</button>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
+        <a class="carousel-control-prev text-decoration-none w-auto ps-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="prev">
+            <i class="fas fa-chevron-left"></i>
+        </a>
+        <a class="carousel-control-next text-decoration-none w-auto pe-3" href="#template-mo-zay-hero-carousel" role="button" data-bs-slide="next">
+            <i class="fas fa-chevron-right"></i>
+        </a>
     </div>
+    <!-- End Banner Hero -->
+
+
+    <!-- Start Categories of The Month -->
+    <section class="container py-5">
+        <div class="row text-center pt-3">
+            <div class="col-lg-6 m-auto">
+                <h1 class="h1">Packages of The Month</h1>
+                <p>
+                    Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="frontend/assets/img/g4.jpg" class="rounded-circle img-fluid border"></a>
+                <h5 class="text-center mt-3 mb-3">Somnath</h5>
+                <p class="text-center"><a class="btn btn-success" href="{{url('/packages')}}">See Detail</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="frontend/assets/img/g5.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Surat</h2>
+                <p class="text-center"><a class="btn btn-success" href="{{url('/packages')}}">See Detail</a></p>
+            </div>
+            <div class="col-12 col-md-4 p-5 mt-3">
+                <a href="#"><img src="frontend/assets/img/g6.jpg" class="rounded-circle img-fluid border"></a>
+                <h2 class="h5 text-center mt-3 mb-3">Rajkot</h2>
+                <p class="text-center"><a class="btn btn-success" href="{{url('/packages')}}">See Detail</a></p>
+            </div>
+        </div>
+    </section>
+    <!-- End Categories of The Month -->
+
+
+    <!-- Start Featured Product -->
+    <section class="bg-light">
+        <div class="container py-5">
+            <div class="row text-center py-3">
+                <div class="col-lg-6 m-auto">
+                    <h1 class="h1">Featured Tour</h1>
+                    <p>
+                         The following are some popular tours by our excellent team to make your travel experience best.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="{{url('/packages')}}">
+                            <img src="frontend/assets/img/g7.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                {{-- <li class="text-muted text-right">$240.00</li> --}}
+                            </ul>
+                            <a href="{{url('/packages')}}" class="h2 text-decoration-none text-dark">Miami</a>
+                            <p class="card-text">
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt in culpa qui officia deserunt.
+                            </p>
+                            <a class="btn btn-success" href="{{url('/packages')}}"> See Tour</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="{{url('/packages')}}">
+                            <img src="frontend/assets/img/g8.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                    <i class="text-muted fa fa-star"></i>
+                                </li>
+                                {{-- <li class="text-muted text-right">$480.00</li> --}}
+                            </ul>
+                            <a href="{{url('/packages')}}" class="h2 text-decoration-none text-dark">Singapore</a>
+                            <p class="card-text">
+                                Aenean gravida dignissim finibus. Nullam ipsum diam, posuere vitae pharetra sed, commodo ullamcorper.
+                            </p>
+                            <a class="btn btn-success" href="{{url('/packages')}}"> See Tour</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-md-4 mb-4">
+                    <div class="card h-100">
+                        <a href="{{url('/packages')}}">
+                            <img src="frontend/assets/img/g9.jpg" class="card-img-top" alt="...">
+                        </a>
+                        <div class="card-body">
+                            <ul class="list-unstyled d-flex justify-content-between">
+                                <li>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                    <i class="text-warning fa fa-star"></i>
+                                </li>
+                                {{-- <li class="text-muted text-right">$360.00</li> --}}
+                            </ul>
+                            <a href="{{url('/packages')}}" class="h2 text-decoration-none text-dark">Egypt</a>
+                            <p class="card-text">
+                                Curabitur ac mi sit amet diam luctus porta. Phasellus pulvinar sagittis diam, et scelerisque ipsum lobortis nec.
+                            </p>
+                            <a class="btn btn-success" href="{{url('/packages')}}"> See Tour</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Featured Product -->
+
+
+    <!-- Start Footer -->
+    <footer class="bg-dark" id="tempaltemo_footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 pt-5">
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li>
+                            <i class="fas fa-map-marker-alt fa-fw"></i>
+                            123 Consectetur at ligula 10660
+                        </li>
+                        <li>
+                            <i class="fa fa-phone fa-fw"></i>
+                            <a class="text-decoration-none" href="tel:010-020-0340">010-020-0340</a>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope fa-fw"></i>
+                            <a class="text-decoration-none" href="mailto:info@company.com">info@company.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-success logo">{{env('APP_NAME')}}</h2>
+                </div>
+
+                <div class="col-md-4 pt-5">
+                    <h2 class="h2 text-light border-bottom pb-3 border-light">Further Info</h2>
+                    <ul class="list-unstyled text-light footer-link-list">
+                        <li><a class="text-decoration-none" href="{{url('index')}}">Home</a></li>
+                        <li><a class="text-decoration-none" href="{{url('about')}}">About Us</a></li>
+                        <li><a class="text-decoration-none" href="{{url('contact')}}">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row text-light mb-4">
+                <div class="col-12 mb-3">
+                    <div class="w-100 my-3 border-top border-light"></div>
+                </div>
+                <div class="col-auto me-auto">
+                    <ul class="list-inline text-left footer-icons">
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a rel="nofollow" class="text-light text-decoration-none" target="_blank" href="http://fb.com/templatemo"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
+                        </li>
+                        <li class="list-inline-item border border-light rounded-circle text-center">
+                            <a class="text-light text-decoration-none" target="_blank" href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg fa-fw"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                {{-- <div class="col-auto">
+                    <label class="sr-only" for="subscribeEmail">Email address</label>
+                    <div class="input-group mb-2">
+                        <input type="text" class="form-control bg-dark border-light" id="subscribeEmail" placeholder="Email address">
+                        <div class="input-group-text btn-success text-light">Subscribe</div>
+                    </div>
+                </div> --}}
+            </div>
+        </div>
+
+        <div class="w-100 bg-black py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-12">
+                        <p class="text-left text-light">
+                            Copyright &copy; 2024 {{env('APP_NAME')}} 
+                            | Managed by <a rel="sponsored" href="https://templatemo.com/page/1" target="_blank">Nilesh Parmar</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+    <!-- Start Script -->
+    <script src="frontend/assets/js/jquery-1.11.0.min.js"></script>
+    <script src="frontend/assets/js/jquery-migrate-1.2.1.min.js"></script>
+    <script src="frontend/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="frontend/assets/js/templatemo.js"></script>
+    <script src="frontend/assets/js/custom.js"></script>
+    <!-- End Script -->
 </body>
 
 </html>
-
-
-<script>
-    $(document).ready(function() {
-        $("#destinations").hide();
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // city dropdown open
-        var citySettings = {
-            "url": "api/get_city",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify({
-                "encryption_key": "{{config('secrets.api_encryption_key')}}"
-            }),
-        };
-
-        $.ajax(citySettings).done(function(response) {
-            var options = "<option value=\"\">Destination</option>";
-            if (response && response.city) {
-                var city = response.city;
-                city.forEach(data => {
-                    var cityId = data.id;
-                    var cityName = data.name;
-                    options += `<option value="${cityName}" data-id="${cityId}" class="city-option">${cityName}</option>`;
-                });
-            }
-            $("#city").html(options);
-        });
-        // city dropdown close
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // load default packages open
-
-        var defaultPackageSettings = {
-            "url": "api/get_popular_agents_packages",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify({
-                "encryption_key": "{{config('secrets.api_encryption_key')}}"
-            }),
-        };
-
-        $.ajax(defaultPackageSettings).done(function(response) {
-            if (response && response.package_data) {
-                if (response.package_data.length > 2) {
-                    var packageHtml = "";
-                    var i = 1;
-                    response.package_data.forEach(data => {
-                        var package_id = data.id;
-                        var agent_id = data.agent_id;
-                        var package_category = data.package_category;
-                        var master_package_id = data.master_package_id;
-                        var days = data.days;
-                        var rate = data.rate;
-
-                        // `<div class="col-sm-5 subject-img">
-                        //         <img src="{{ asset('frontend/assets/images/g1.jpg') }}" class="img-fluid" alt="">
-                        //     </div>`
-                        packageHtml +=
-                            `<div class="col-lg-4 subject-card mt-lg-0 my-4 package-div" data-toggle="modal" data-target="#packageModal" data-package-id="${package_id}" data-agent-id="${agent_id}" data-package-name="${package_category}" data-master-package-id=${master_package_id} id="hello-${i}">
-                                <div class="subject-card-header p-4">
-                                    <span class="card_title p-lg-4d-block">
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-12 subject-content mt-sm-0 mt-4">
-                                                   <h4>${package_category}</h4>
-                                                <p>${days}</p>
-                                                <div class="dst-btm">
-                                                    <h6 class=""> Start From </h6>
-                                                    <span>${rate}</span>
-                                                </div>
-                                                <p class="sub-para">Per person</p>
-                                            </div>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>`;
-                    });
-
-                    $("#package-container").html(packageHtml);
-                    $("#destinations").show();
-                } else {
-                    console.log("Default data is not more than 2, so it can't be shown");
-                }
-            } else {
-                console.log('default packageSettings errror')
-            }
-        });
-        // load default packages close
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // show dynamic packages open
-        $(document).on("change", "#city", function() {
-            let cityName = $(this).val();
-            let cityId = $(this).children("option:selected").attr("data-id");
-            // let cityName = "Varanasi";
-            // let cityId = 585;
-
-            var packageSettings = {
-                "url": "api/get_agents_packages",
-                "method": "POST",
-                "timeout": 0,
-                "headers": {
-                    "Content-Type": "application/json"
-                },
-                "data": JSON.stringify({
-                    "city_id": cityId,
-                    "encryption_key": "{{config('secrets.api_encryption_key')}}"
-                }),
-            };
-
-            $.ajax(packageSettings).done(function(response) {
-                if (response && response.package_data) {
-                    if (response.package_data.length > 0) {
-                        var packageHtml = "";
-                        var i = 1;
-                        response.package_data.forEach(data => {
-                            var package_id = data.id;
-                            var agent_id = data.agent_id;
-                            var package_category = data.package_category;
-                            var master_package_id = data.master_package_id;
-                            var days = data.days;
-                            var rate = data.rate;
-
-                            // `<div class="col-sm-5 subject-img">
-                            //         <img src="{{ asset('frontend/assets/images/g1.jpg') }}" class="img-fluid" alt="">
-                            //     </div>`
-                            packageHtml +=
-                                `<div class="col-lg-4 subject-card mt-lg-0 my-4 package-div" data-toggle="modal" data-target="#packageModal" data-package-id="${package_id}" data-agent-id="${agent_id}" data-package-name="${package_category}" data-master-package-id=${master_package_id} id="hello-${i}">
-                                <div class="subject-card-header p-4">
-                                    <span class="card_title p-lg-4d-block">
-                                        <div class="row align-items-center">
-                                            <div class="col-sm-12 subject-content mt-sm-0 mt-4">
-                                                   <h4>${package_category}</h4>
-                                                <p>${days}</p>
-                                                <div class="dst-btm">
-                                                    <h6 class=""> Start From </h6>
-                                                    <span>${rate}</span>
-                                                </div>
-                                                <p class="sub-para">Per person</p>
-                                            </div>
-                                        </div>
-                                    </span>
-                                </div>
-                            </div>`;
-                        });
-
-                        $("#destinations").show();
-                        $("#package-container").html(packageHtml);
-                    } else {
-                        $("#package-heading").html(`No Packages In ${cityName}`)
-                        alert('Currently, no packages found in ' + cityName);
-                    }
-                } else {
-                    console.log('packageSettings errror')
-                }
-
-                let destinationsSection = $("#destinations");
-
-                $("#package-heading").text("Popular Packages in " + cityName);
-
-                $("html, body").animate({
-                    scrollTop: destinationsSection.offset().top
-                }, 0);
-            });
-        });
-        // show dynamic packages close
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // query form modal submit open
-        $(document).on("click", ".package-div", function() {
-            var package_id = $(this).attr("data-package-id");
-            var agent_id = $(this).attr("data-agent-id");
-            var master_package_id = $(this).attr("data-master-package-id");
-            // var package_name = $(this).attr("data-package-name");
-            // var package_text = "Name: " + package_name + " ::: " + package_id + " ::: " + agent_id;
-            // $("#packageModalLabel").text(package_text);
-
-            $("#agent_id").val(agent_id);
-            $("#agent_package_id").val(package_id);
-            $("#master_package_id").val(master_package_id);
-        });
-
-        $(document).on("click", ".add-icon-div", function() {
-            var count = $(".form-container:last").attr("data-count");
-            var iCount = parseInt(count) + 1;
-            var clonedForm = $(".form-container:last").clone();
-            clonedForm.find(':input').val('');
-
-            var formIndex = iCount;
-            // Find all form controls in the cloned form and update their IDs
-            clonedForm.find(':input').each(function(index, element) {
-                var originalName = $(element).attr('name');
-                var newName = originalName.replace(/\[\d+\]/g, '[' + formIndex + ']');
-
-                $(element).attr({
-                    'name': newName,
-                    'id': newName,
-                });
-
-                // You can also update other attributes as needed
-            });
-
-            // Append the cloned form to the form container
-            $(".main-form-container").append(clonedForm);
-
-            $(".form-container:last").removeAttr("data-count");
-            $(".form-container:last").attr("data-count", iCount);
-
-            // Show minus icon if there is more than one form
-            toggleMinusIcon();
-        });
-
-        $(document).on("click", ".remove-row", function() {
-            $(this).closest(".form-container").remove();
-            toggleMinusIcon();
-        });
-
-        // Function to show/hide the minus icon based on the number of forms
-        function toggleMinusIcon() {
-            var formCount = $(".main-form-container .form-container").length;
-
-            if (formCount > 1) {
-                $(".remove-row").show();
-            } else {
-                $(".remove-row").hide();
-            }
-        }
-
-        // Initial setup: hide minus icon if there is only one form
-        toggleMinusIcon();
-        // query form modal submit close
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-        // $(document).on("click", ".save-query-form", function() {
-        $(document).on("submit", ".query-form", function(event) {
-            event.preventDefault();
-
-            var agent_id = $("#agent_id").val()
-            var agent_package_id = $("#agent_package_id").val()
-            var master_package_id = $("#master_package_id").val()
-            // Collect form data
-            var formData = $(".query-form").serializeArray();
-            formData.push({
-                name: "encryption_key",
-                value: "{{config('secrets.api_encryption_key')}}"
-            }, {
-                name: "agent_id",
-                value: agent_id
-            }, {
-                name: "agent_package_id",
-                value: agent_package_id
-            }, {
-                name: "master_package_id",
-                value: master_package_id
-            }, );
-
-            // Perform the AJAX request
-            $(".save-query-form").text("Submitting...").prop("disabled", true);
-            $.ajax({
-                type: "POST",
-                url: "api/save_enquiry", // Replace with your actual server endpoint
-                data: formData,
-                success: function(response) {
-                    // Handle the success response
-                    console.log("Form submitted successfully", response);
-                    $(".close").click()
-                    alert("Success")
-                    $(".form-container").not(":first").remove();
-                    var last_remaining_form = $(".form-container:last");
-                    last_remaining_form.find(':input').val('');
-                    $(".save-query-form").text("Submit").prop("disabled", false);
-
-                    toggleMinusIcon();
-                },
-                error: function(error) {
-                    // Handle the error response
-                    console.error("Error submitting form", error);
-                }
-            });
-        });
-        //save enquiry form close
-
-        $(document).on("submit", ".contact-us-form", function(event) {
-            event.preventDefault();
-            var formData = $(this).serializeArray();
-            formData.push({
-                name: "encryption_key",
-                value: "{{config('secrets.api_encryption_key')}}"
-            });
-
-            // var settings = {
-            //     "url": "api/contact_us",
-            //     "method": "POST",
-            //     "timeout": 0,
-            //     "headers": {
-            //         "Content-Type": "application/json"
-            //     },
-            //     "data": formData,
-            // };
-
-            $.ajax({
-                type: "POST",
-                url: "api/contact_us", // Replace with your actual server endpoint
-                data: formData,
-                beforeSend: function(){
-                    $("#send_message_btn").prop("disabled", true).html("Submitting...");
-                },
-                success: function(response) {
-                    // Handle the success response
-                    alert("Success!!! We will contact you shortly");
-                    $(".contact-name").val('');
-                    $(".contact-email").val('');
-                    $(".contact-phone").val('');
-                    $(".contact-message").val('');
-                    $("#send_message_btn").prop("disabled", false).html("Send Message");
-                },
-                error: function(error) {
-                    // Handle the error response
-                    alert("Something went wrong");
-                    $("#send_message_btn").prop("disabled", false).html("Send Message");
-                }
-            })
-            // .done(function(response) {
-            //     if (response && response.message) {
-            //         console.log(response);
-            //         alert("We will contact you shortly")
-            //     } else {
-            //         alert("Something went wrong")
-            //     }
-
-            // });
-        });
-
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        //Start Testimonials Script//
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-        var settings = {
-            "url": "api/testimonials",
-            "method": "POST",
-            "timeout": 0,
-            "headers": {
-                "Content-Type": "application/json"
-            },
-            "data": JSON.stringify({
-                "encryption_key": "{{config('secrets.api_encryption_key')}}"
-            }),
-        };
-
-        $.ajax(settings).done(function (response) {
-            var testimonialItem = '';
-            response.testimonials.forEach(testimonial => {
-                testimonialItem += '<div class="item">' +
-                                            '<div class="testimonial-content">' +
-                                                '<div class="testimonial">' +
-                                                    '<blockquote>' +
-                                                        '<span class="fa fa-quote-left" aria-hidden="true"></span>' +
-                                                        testimonial.description +
-                                                    '</blockquote>' +
-                                                    '<div class="testi-des">' +
-                                                        '<div class="test-img"><img src="' + (testimonial.image_path || '') + '" class="img-fluid" alt="no image">' +
-                                                        '</div>' +
-                                                        '<div class="peopl align-self">' +
-                                                            '<h3>' + testimonial.name + '</h3>' +
-                                                            '<p class="indentity">' + (testimonial.city || '') + '</p>' +
-                                                        '</div>' +
-                                                    '</div>' +
-                                                '</div>' +
-                                            '</div>' +
-                                        '</div>';
-
-                                    }); 
-                                    $('.testimonial-container').html(testimonialItem).promise().done(function() {
-                                        // Initialize Owl Carousel
-                                        $("#owl-demo1").owlCarousel({
-                                            loop: true,
-                                            margin: 20,
-                                            nav: false,
-                                            responsiveClass: true,
-                                            responsive: {
-                                                0: {
-                                                    items: 1,
-                                                    nav: false
-                                                },
-                                                736: {
-                                                    items: 1,
-                                                    nav: false
-                                                },
-                                                1: {
-                                                    items: 1,
-                                                    nav: false,
-                                                    loop: true
-                                                }
-                                            }
-                                        })
-                                    });
-                                });
-
-        
-        /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        // End Testimonials Script //
-        ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-    })
-</script>

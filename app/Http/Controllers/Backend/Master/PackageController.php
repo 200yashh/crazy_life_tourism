@@ -26,7 +26,7 @@ class PackageController extends Controller
 
     public function index(Builder $builder)
     {
-        $this->_viewData['page_title'] = "Manage Packages";
+        $this->_viewData['page_title'] = "Manage City";
         $this->_viewData['route'] = route("master_package.create");
         if (request()->ajax()) {
             return DataTables::of(MasterPackage::query())
@@ -86,7 +86,7 @@ class PackageController extends Controller
     {
         $data = new MasterPackage();
         $action = route('master_package.store');
-        $this->_viewData['page_title'] = 'Add Package';
+        $this->_viewData['page_title'] = 'Add City';
 
         $packages = MasterPackage::pluck('slug')->toJson();
         $this->_viewData['packages'] = $packages;
@@ -94,7 +94,7 @@ class PackageController extends Controller
         if (!empty($id)) {
             $data = MasterPackage::findOrFail($id);
             $action = route('master_package.update', $id);
-            $this->_viewData['page_title'] = 'Edit MasterPackage';
+            $this->_viewData['page_title'] = 'Edit City';
         }
 
         $this->_viewData['data'] = $data->toArray();

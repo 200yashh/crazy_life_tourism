@@ -51,9 +51,9 @@
                                 </select>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="flight" class="form-label">Flight </label>
-                                <input class="form-control required" type="text" name="flight" id="flight"
-                                    value="{{ $data['flight'] ?? old('flight') }}" />
+                                <label for="name" class="form-label">Package Name </label>
+                                <input class="form-control required" type="text" name="name" id="name"
+                                    value="{{ $data['name'] ?? old('name') }}" />
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label for="rate" class="form-label">Rate </label>
@@ -61,34 +61,17 @@
                                 value="{{ $data['rate'] ?? old('rate') }}" />
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="event" class="form-label">Event </label>
-                                <input class="form-control" type="text" id="event" name="event"
-                                value="{{ $data['event'] ?? old('event') }}" />
+                                <label for="description" class="form-label">Description </label>
+                                <textarea class="form-control" name="description" id="description" rows="3">{{ $data['description'] ?? old('description') }}</textarea>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label for="discount" class="form-label">Discount </label>
-                                <input class="form-control" type="text" id="discount" name="discount"
-                                value="{{ $data['discount'] ?? old('discount') }}" />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="makkah_hotel" class="form-label">Makkah Hotel </label>
-                                <input class="form-control" type="text" id="makkah_hotel" name="makkah_hotel"
-                                value="{{ $data['makkah_hotel'] ?? old('makkah_hotel') }}" />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="medina_hotel" class="form-label">Madinah Hotel </label>
-                                <input class="form-control" type="text" id="medina_hotel" name="medina_hotel"
-                                value="{{ $data['medina_hotel'] ?? old('medina_hotel') }}" />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="makkah_hotel_distance" class="form-label">Makkah Hotel Distance </label>
-                                <input class="form-control" type="text" id="makkah_hotel_distance" name="makkah_hotel_distance"
-                                value="{{ $data['makkah_hotel_distance'] ?? old('makkah_hotel_distance') }}" />
-                            </div>
-                            <div class="mb-3 col-md-6">
-                                <label for="medina_hotel_distance" class="form-label">Madinah Hotel Distance </label>
-                                <input class="form-control" type="text" id="medina_hotel_distance" name="medina_hotel_distance"
-                                value="{{ $data['medina_hotel_distance'] ?? old('medina_hotel_distance') }}" />
+                                <label for="discount" class="form-label">Includes </label>
+                                <select name="include[]" id="include" class="form-select" multiple>
+                                    <option value="Lunch">Lunch</option>
+                                    <option value="Dinner">Dinner</option>
+                                    <option value="Hotel Stay">Hotel Stay</option>
+                                    <option value="Train Tickets">Train Tickets</option>
+                                </select>
                             </div>
                             <div class="mb-3 col-md-6">
                                 <label class="form-label" for="agent_id">Agent </label>
@@ -105,7 +88,7 @@
                                 </select>
                             </div>
                             <div class="mb-3 col-md-6">
-                                <label class="form-label" for="master_package_id">Category </label>
+                                <label class="form-label" for="master_package_id">City </label>
                                 <select id="master_package_id" class="select2 form-select required" name="master_package_id">
                                     <option value="">Select</option>
                                     @foreach ($master_packages_list as $pV => $pL)

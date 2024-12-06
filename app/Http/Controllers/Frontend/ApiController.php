@@ -81,6 +81,7 @@ class ApiController extends Controller
 
     public function saveEnquiryData(Request $request)
     {
+        // dd($request->all());
         $enquiryData = $request->post('enquiry');
 
         if (!empty($enquiryData)) {
@@ -94,7 +95,7 @@ class ApiController extends Controller
                 $enquiry = new Enquiry();
                 foreach ($eVal as $name => $value) {
 
-                    if (in_array($name, ['passport_date_of_issue', 'passport_date_of_expiry', 'dob'])) {
+                    if (in_array($name, ['date','package_date', 'dob'])) {
                         $value = Carbon::parse($value)->tz(config('app.timezone'))->format('Y-m-d');
                     }
                     $enquiry->{$name} = $value;

@@ -59,7 +59,7 @@
         },
         {
           "url": "/admin/master_package",
-          "name": "Package",
+          "name": "City",
           "slug": "master_package"
         }
       ]

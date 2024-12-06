@@ -20,13 +20,13 @@
                     @method('PUT')
                 @endif
                 <div class="card mb-4">
-                    <h5 class="card-header">Package</h5>
+                    <h5 class="card-header">City</h5>
                     <div class="card-body">
                         <div class="row">
                             <input type="hidden" id="package_collection" value="{{ $packages??"" }}">
                             <input type="hidden" id="pre_slug" value="{{ $data['slug'] ?? '' }}">
                             <div class="mb-3 col-md-12">
-                                <label for="name" class="form-label">Package Name</label>
+                                <label for="name" class="form-label">City Name</label>
                                 <input class="form-control required" type="text" id="name" name="name"
                                     value="{{ $data['name'] ?? old('name') }}" autofocus />
                                     <div class="packageDiv"></div>

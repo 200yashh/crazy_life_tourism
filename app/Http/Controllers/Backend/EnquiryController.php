@@ -51,20 +51,8 @@ class EnquiryController extends Controller
                 ->editColumn('created_at', function (Enquiry $user) {
                     return date('d-m-Y', strtotime($user->created_at));
                 })
-                ->editColumn('passport_date_of_issue', function (Enquiry $user) {
-                    if (!empty($user->passport_date_of_issue)) {
-                        return date('d-m-Y', strtotime($user->passport_date_of_issue));
-                    }
-                })
-                ->editColumn('passport_date_of_expiry', function (Enquiry $user) {
-                    if (!empty($user->passport_date_of_expiry)) {
-                        return date('d-m-Y', strtotime($user->passport_date_of_expiry));
-                    }
-                })
-                ->editColumn('dob', function (Enquiry $user) {
-                    if (!empty($user->dob)) {
-                        return date('d-m-Y', strtotime($user->dob));
-                    }
+                ->editColumn('date', function (Enquiry $user) {
+                    return date('d-m-Y', strtotime($user->date));
                 })
                 ->filterColumn('users.first_name', function ($query, $keyword) {
                     $sql = $this->_agentFullName . " like ?";
@@ -75,19 +63,9 @@ class EnquiryController extends Controller
                     $sql = "master_enquiries.created_at like ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
-                ->filterColumn('passport_date_of_issue', function ($query, $keyword) {
+                ->filterColumn('master_enquiries.date', function ($query, $keyword) {
                     $keyword = date('Y-m-d', strtotime(trim($keyword)));
-                    $sql = "passport_date_of_issue like ?";
-                    $query->whereRaw($sql, ["%{$keyword}%"]);
-                })
-                ->filterColumn('passport_date_of_expiry', function ($query, $keyword) {
-                    $keyword = date('Y-m-d', strtotime(trim($keyword)));
-                    $sql = "passport_date_of_expiry like ?";
-                    $query->whereRaw($sql, ["%{$keyword}%"]);
-                })
-                ->filterColumn('dob', function ($query, $keyword) {
-                    $keyword = date('Y-m-d', strtotime(trim($keyword)));
-                    $sql = "dob like ?";
+                    $sql = "master_enquiries.date like ?";
                     $query->whereRaw($sql, ["%{$keyword}%"]);
                 })
                 // ->setRowClass('text-center')
@@ -101,19 +79,15 @@ class EnquiryController extends Controller
             ['data' => 'id', 'name' => 'id', 'title' => 'Enquiry ID'],
             ['data' => 'agent', 'searchable' => true, 'name' => 'users.first_name', 'title' => 'Agent',],
             ['data' => 'agent_package_id', 'searchable' => true, 'name' => 'master_enquiries.agent_package_id', 'title' => 'Agent Package ID'],
-            ['data' => 'master_package_name', 'searchable' => true, 'name' => 'master_packages.name', 'title' => 'Package Category'],
-            ['data' => 'name_as_per_passport', 'searchable' => true, 'name' => 'name_as_per_passport', 'title' => 'Name as per Passport'],
-            ['data' => 'passport_number', 'searchable' => true, 'name' => 'passport_number', 'title' => 'Passport Number'],
-            ['data' => 'passport_number', 'searchable' => true, 'name' => 'passport_number', 'title' => 'Passport Number'],
-            ['data' => 'passport_date_of_issue', 'searchable' => true, 'name' => 'passport_date_of_issue', 'title' => 'Passport Date of Issue'],
-            ['data' => 'passport_date_of_expiry', 'searchable' => true, 'name' => 'passport_date_of_expiry', 'title' => 'Passport Date of Expiry'],
-            ['data' => 'nationality', 'searchable' => true, 'name' => 'nationality', 'title' => 'Nationality'],
-            ['data' => 'dob', 'searchable' => true, 'name' => 'dob', 'title' => 'Date of Birth'],
-            ['data' => 'place_of_birth', 'searchable' => true, 'name' => 'place_of_birth', 'title' => 'Place of Birth'],
-            ['data' => 'gender', 'searchable' => true, 'name' => 'gender', 'title' => 'Gender'],
+            ['data' => 'name', 'searchable' => true, 'name' => 'name', 'title' => 'Name',],
+            ['data' => 'master_package_name', 'searchable' => true, 'name' => 'master_packages.name', 'title' => 'City Category'],
+            ['data' => 'no_of_adult', 'searchable' => true, 'name' => 'no_of_adult', 'title' => 'No of Adults'],
+            ['data' => 'no_of_child', 'searchable' => true, 'name' => 'no_of_child', 'title' => 'No of Childrens'],
+            ['data' => 'no_of_infants', 'searchable' => true, 'name' => 'no_of_infants', 'title' => 'No of Infrants'],
             ['data' => 'address', 'searchable' => true, 'name' => 'address', 'title' => 'Address'],
             ['data' => 'contact', 'searchable' => true, 'name' => 'contact', 'title' => 'Contact Number'],
             ['data' => 'email', 'searchable' => true, 'name' => 'email', 'title' => 'Email'],
+            ['data' => 'date', 'searchable' => true, 'name' => 'master_enquiries.date', 'title' => 'Select Date'],
             ['data' => 'created_at', 'searchable' => true, 'name' => 'master_enquiries.created_at', 'title' => 'Enquiry Date'],
         ]);
         $builder->parameters([
